@@ -16,7 +16,7 @@ weatherForm.addEventListener('submit',(e)=>{
             console.log(data)
             // if (data.error){
             //     // console.log(data.error)
-            //     messageOne.textContent = data.error
+            //     messageOne.textContent = data.errorpeter
             // }else{
             //     messageOne.textContent = data.current.temperature
             //     messageTwo.textContent = data.location.name
