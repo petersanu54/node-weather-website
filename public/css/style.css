@@ -1,9 +1,10 @@
 body{
-    color: #333333;
+    color: #555555;
     font-family: Arial ;
     max-width: 650;
     margin: 0 auto;
     padding: 25 16px;
+    background-color: black;
 
     display: flex;
     flex-direction: column;

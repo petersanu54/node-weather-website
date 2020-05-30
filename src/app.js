@@ -26,11 +26,11 @@ app.get('/', (req, res) => {
 })
 
 app.get('/weather',(req,res)=>{
-            if(!req.query.address){
+    if (!req.query.address) {
         return res.send({
-            error: 'No address mentioned'
-            })
-        }
+            error: 'You must provide an address!'
+        })
+    }
         geocode(req.query.address,(error,{longitude,latitude,placename} = {})=>{
                     if(error){
                                      return res.send({error : error})
@@ -71,7 +71,7 @@ app.get('/help/*',(req,res)=>{
 
 
 app.get('*',(req,res)=>{
-    res.render('404',{
+    res.render('404',{  
         title : 404,
         errortext : 'This is the 404 page',
         creator : 'peter'
