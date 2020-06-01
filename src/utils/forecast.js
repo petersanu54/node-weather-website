@@ -10,6 +10,7 @@ const forecast = (lon,lat, callback)=>{
         }
         else{
             callback(undefined,{
+                temperature : response.body.current.temperature,
                 weather : response.body.current.weather_descriptions[0]+'. It is currently '+response.body.current.temperature+' degrees out. There is a '+response.body.current.precip+'% chances of rain.'
             })
         }

@@ -1,33 +1,133 @@
+<!DOCTYPE html>
 <html>
-    <head>
-        <title>Weather</title>
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="icon" href="/image/weather.png">
-        {{!-- <script src="/js/app.js"></script> --}}
-       
-    </head>
-    <body>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<style>
+  
+  *{
+      box-sizing: border-box;
+  }
+  body {
+  position : relative;
+  }
 
-    <div class="main-content">
-        {{>header}}
+h1{
+    font-size: 75px;
+    text-shadow: 0 0 1px, 0 0 2px black;
+    font-weight: 500;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
 
-        <p>Use this website to check your weather!</p>
+input[type=text] {
+  width: 180px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  padding: 4px 4px 4px 10px;
+  transition: width 0.3s ease-in-out;
+  width: 50%;
+}
 
+{{!-- input[type=text]:focus {
+  width: 17%;
+} --}}
+
+.image-bg{
+    padding-top:50px;
+    background-image: url("/image/leaves2.jpg");
+    height:500px;
+    filter: blur(8px);
+  -webkit-filter: blur(2px);
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+
+}
+
+.image-text{
+    background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0); /* Black w/opacity/see-through */
+  color: white;
+  position: absolute;
+  top: 23%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 80%;
+  padding: 20px;
+  text-align: center;
+}
+  #section2 {padding-top:50px;height:500px;color: #fff; background-color: rgb(0,0,0);}
+
+  .navbar-brand{
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      color: rgb(198, 198, 198);
+  }
+
+  .navbar-inner{
+      background: transparent;
+      background:rgba(0,0,0,0.7);
+  }
+#inputtxt{width: 55px;}
+.fontsize{font-size: 17px;}
+.fontheadsize{font-size: 17px;}
+#inputtext{color: black;}
+.main-content{flex-grow: 1;}
+
+#message-1{font-size: 30px;}
+#message-2{font-size: 80px;}
+#message-3{font-size: 20px;}
+
+  </style>
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+    
+    {{!-- <div class="bg-text"> --}}
+    <nav class="navbar navbar-inner navbar-fixed-top">
+	    <div class="container-fluid">
+		    <div class="navbar-header">
+			    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mynavbar">
+				    <span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button> 
+		        <a href="/" class="navbar-brand fontheadsize">Home</a>
+                <a href="/about" class="navbar-brand fontsize">About</a>
+                <a href="/help" class="navbar-brand fontsize">Help</a>
+			</div>
+		</div>
+	</nav>
+    {{!-- </div> --}}
+	<div class=main-content id="section1">
+        <div class="container-fluid image-bg"></div>
+        <div class="image-text">
+	    <h1>Weather</h1>
+        <p></p>
         <form>
-            <input placeholder="Location">
-            <button>Search</button>
-        </form>
+            <input type="text" id="inputtext" placeholder="Location" size="40" >
+            <button style="color: black; height: 32px; border-radius: 4px; border: 2px solid #F2F2F2;">Search</button>
+        </form> 
+        <p></p>
         <p id="message-1"></p>
         <p id="message-2"></p>
         <p id="message-3"></p>
-
-        <h3>{{location}}</h3>
-        <h4>{{temperature}}</h4>
-         
-    </div>
-
-
-        {{>footer}}
-     <script src="/js/app.js"></script>
-    </body>
+        </div>
+</div>
+<div id="section2" class="container-fluid">
+  <h1>Section 2</h1>
+  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+</div>
+<script src="/js/app.js"></script>
+</body>
 </html>

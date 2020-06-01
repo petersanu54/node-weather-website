@@ -6,12 +6,13 @@ const search = document.querySelector('input')
 const messageOne = document.querySelector('#message-1')
 const messageTwo = document.querySelector('#message-2')
 const messageThree = document.querySelector('#message-3')
+const degree = '\u00B0'+'C';
 weatherForm.addEventListener('submit',(e)=>{
     e.preventDefault()
 
     const location = search.value
 
-    messageOne.textContent = 'Loading....'
+    messageOne.textContent = ''
     messageTwo.textContent = ''
     messageThree.textContent = ''
 
@@ -24,9 +25,11 @@ weatherForm.addEventListener('submit',(e)=>{
            }
            else{
             messageOne.textContent = data.placename
-            messageTwo.textContent = data.weather
-            messageThree.textContent = data.temperature
+            messageTwo.textContent = data.temperature
+            messageTwo.append(degree)
+            messageThree.textContent = data.weather
            }
         })
     })
+    
 })
